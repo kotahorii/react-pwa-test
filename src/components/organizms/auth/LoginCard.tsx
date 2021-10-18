@@ -1,4 +1,4 @@
-import { VFC, useState, ChangeEvent } from "react";
+import { VFC, useState } from "react";
 import { LoginButtons } from "../../molecule/auth/LoginButtons";
 import { AccountTextGroup } from "../../molecule/auth/AccountTextGroup";
 import { EmailAndPasswordForms } from "../../molecule/auth/EmailAndPasswordForms";

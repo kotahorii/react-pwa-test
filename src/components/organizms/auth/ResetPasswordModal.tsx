@@ -9,7 +9,6 @@ import {
   Input,
   FormControl,
   Button,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/icon";
 import { IoMdSend } from "react-icons/io";

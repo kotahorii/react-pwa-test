@@ -1,8 +1,5 @@
 import { VFC } from "react";
 import { Flex, Stack, useDisclosure } from "@chakra-ui/react";
-
-import {} from "@firebase/auth";
-
 import { ResetPasswordModal } from "../organizms/auth/ResetPasswordModal";
 import { HeadingWithText } from "../molecule/auth/HeadingwithText";
 import { LoginCard } from "../organizms/auth/LoginCard";
