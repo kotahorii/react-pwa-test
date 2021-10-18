@@ -10,6 +10,7 @@ import {
   Input,
   Button,
 } from "@chakra-ui/react";
+import { Avatar } from "@chakra-ui/avatar";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -18,6 +19,8 @@ import {
 } from "@firebase/auth";
 import { auth, provider, storage } from "../firebase";
 import { FcGoogle } from "react-icons/fc";
+import { FaUserCircle } from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
 import { Icon } from "@chakra-ui/icon";
 import { getDownloadURL, ref, uploadBytes } from "@firebase/storage";
 import { useAppDispatch } from "../app/hooks";
@@ -97,6 +100,11 @@ export const Auth: VFC = () => {
     await signInWithPopup(auth, provider).catch((err) => alert(err.message));
   };
 
+  const handleAvatarImage = () => {
+    const inputImage = document.getElementById("imageInput");
+    inputImage?.click();
+  };
+
   return (
     <>
       <Flex minH="100vh" align="center" justify="center" bg="gray.50">
@@ -109,6 +117,33 @@ export const Auth: VFC = () => {
           </Stack>
           <Box rounded="md" color="gray.600" boxShadow="lg" p="8">
             <Stack spacing="4">
+              {!isLogin && (
+                <>
+                  <FormControl>
+                    <Input
+                      type="text"
+                      placeholder="Username"
+                      variant="flushed"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                    />
+                  </FormControl>
+                  <input
+                    type="file"
+                    hidden={true}
+                    id="imageInput"
+                    onChange={(e) => setAvatarImage(e.target.files![0])}
+                  />
+                  <Flex align="center" justify="center">
+                    <Icon
+                      cursor="pointer"
+                      as={avatarImage ? FaUserCircle : FaRegUserCircle}
+                      fontSize="30"
+                      onClick={handleAvatarImage}
+                    />
+                  </Flex>
+                </>
+              )}
               <FormControl>
                 <Input
                   type="email"
@@ -142,6 +177,11 @@ export const Auth: VFC = () => {
               </Stack>
               <Stack spacing="6">
                 <Button
+                  disabled={
+                    isLogin
+                      ? !email || password.length < 6
+                      : !username || !email || password.length < 6 || !avatarImage?.name
+                  }
                   size="sm"
                   bg="blue.400"
                   color="white"
