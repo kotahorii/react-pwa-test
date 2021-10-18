@@ -10,7 +10,9 @@ import { store } from "./app/store";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
