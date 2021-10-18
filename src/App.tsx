@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
-import { Auth } from "./components/Auth";
-import { Feed } from "./components/Feed";
+import { Auth } from "./components/pages/Auth";
+import { Feed } from "./components/pages/Feed";
 import { login, logout, selectUser } from "./features/userSlice";
 import { auth } from "./firebase";
 

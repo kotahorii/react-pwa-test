@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 import { signOut } from "@firebase/auth";
 import { VFC } from "react";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 
 export const Feed: VFC = () => {
   return (
