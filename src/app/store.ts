@@ -1,13 +1,9 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import loginReducer from "../features/loginSlice";
-import mapReducer from "../features/mapSlice";
-import postReducer from "../features/postSlice";
+import userReducer from "../features/userSlice";
 
 export const store = configureStore({
   reducer: {
-    login: loginReducer,
-    map: mapReducer,
-    post: postReducer,
+    user: userReducer,
   },
 });
 
