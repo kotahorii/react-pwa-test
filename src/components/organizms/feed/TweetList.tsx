@@ -34,6 +34,7 @@ export const TweetList: VFC = () => {
           posts.map((post) => (
             <Post
               key={post.id}
+              postId={post.id}
               avatar={post.avatar}
               image={post.image}
               text={post.text}
