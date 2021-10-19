@@ -10,8 +10,8 @@ export const TweetText: VFC<Props> = ({ tweetMsg, setTweetMsg }) => {
   return (
     <>
       <Input
+        w={{ base: "2xs", md: "2xl" }}
         placeholder="What's happening?"
-        w="lg"
         type="text"
         variant="flushed"
         value={tweetMsg}

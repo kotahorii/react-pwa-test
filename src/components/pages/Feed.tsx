@@ -6,7 +6,13 @@ import { TweetList } from "../organizms/feed/TweetList";
 export const Feed: VFC = () => {
   return (
     <>
-      <Flex justify="center" w="10xl" minH="100vh" bg="gray.50" p="5">
+      <Flex
+        justify="center"
+        w={{ md: "auto", base: "md" }}
+        minH="100vh"
+        bg="gray.50"
+        p="5"
+      >
         <Stack spacing="5">
           <TweetInput />
           <TweetList />

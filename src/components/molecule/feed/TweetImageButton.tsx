@@ -31,7 +31,7 @@ export const TweetImageButton: VFC<Props> = ({ tweetImage, setTweetImage }) => {
       <IconButton
         aria-label="addPhoto"
         variant="flushed"
-        fontSize="30px"
+        fontSize={{ md: "30px", base: "20px" }}
         color="gray.500"
         _focus={{ boxShadow: "none" }}
         onClick={handleTweetImage}

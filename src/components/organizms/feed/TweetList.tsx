@@ -29,7 +29,7 @@ export const TweetList: VFC = () => {
   }, []);
   return (
     <>
-      <Stack justify="center" spacing="5">
+      <Stack spacing="5">
         {posts[0]?.id &&
           posts.map((post) => (
             <Post

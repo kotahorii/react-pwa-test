@@ -73,10 +73,18 @@ export const TweetInput: VFC = () => {
   return (
     <>
       <form onSubmit={sendTweet}>
-        <Stack direction="row" spacing="5">
-          <Avatar src={user.user.photoUrl} onClick={logout} />
-          <Stack spacing="3" direction="row" pl="5">
+        <Stack
+          spacing="3"
+          direction={{ md: "row", base: "column" }}
+          pl="5"
+          justify="center"
+        >
+          <Stack direction="row" justify="center">
+            <Avatar src={user.user.photoUrl} onClick={logout} />
             <TweetText tweetMsg={tweetMsg} setTweetMsg={setTweetMsg} />
+          </Stack>
+
+          <Stack direction="row" justify="center">
             <TweetImageButton
               tweetImage={tweetImage}
               setTweetImage={setTweetImage}
